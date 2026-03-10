@@ -14,8 +14,8 @@ export function Services() {
     <section
       id="services"
       style={{
-        paddingTop: 200,
-        paddingBottom: 200,
+        paddingTop: 120,
+        paddingBottom: 120,
         paddingLeft: 24,
         paddingRight: 24,
         background: "#2A2E33",

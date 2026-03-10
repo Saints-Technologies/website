@@ -15,7 +15,7 @@ export function Marquee() {
   const doubled = [...techStack, ...techStack];
 
   return (
-    <section style={{ paddingTop: 80, paddingBottom: 80, background: "#2A2E33", overflow: "hidden" }}>
+    <section style={{ paddingTop: 40, paddingBottom: 40, background: "#2A2E33", overflow: "hidden" }}>
       <p
         style={{
           textAlign: "center",

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 
 export function Navbar() {
@@ -123,8 +124,8 @@ export function Navbar() {
                 <span style={{ color: lang === "tr" ? "#ffffff" : "#A8A199" }}>TR</span>
               </button>
 
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 style={{
                   padding: "10px 22px",
                   fontSize: 13,
@@ -138,7 +139,7 @@ export function Navbar() {
                 className="hover:bg-brand-light"
               >
                 {t.nav.cta}
-              </a>
+              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -200,8 +201,8 @@ export function Navbar() {
                 >
                   {lang === "en" ? "Türkçe'ye geç" : "Switch to English"}
                 </button>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   onClick={() => setMobileOpen(false)}
                   style={{
                     width: "fit-content", padding: "14px 32px", borderRadius: 999,
@@ -209,7 +210,7 @@ export function Navbar() {
                   }}
                 >
                   {t.nav.cta}
-                </a>
+                </Link>
               </motion.div>
             </div>
           </motion.div>

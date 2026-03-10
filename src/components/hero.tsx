@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
+import { NeuralNetwork } from "./neural-network";
 
 export function Hero() {
   const { t } = useI18n();
@@ -11,79 +12,29 @@ export function Hero() {
       style={{ minHeight: "100vh", paddingTop: 160, paddingBottom: 100, background: "#2A2E33" }}
       className="relative flex flex-col items-center justify-center overflow-hidden"
     >
+      {/* Interactive Neural Network background */}
+      <NeuralNetwork />
+
       {/* Ambient glow — top center */}
       <div
         className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2"
         style={{
-          width: 900, height: 700, marginTop: -250,
-          background: "radial-gradient(ellipse at center, rgba(207,199,190,0.07) 0%, transparent 65%)",
+          width: 900, height: 700, marginTop: -250, zIndex: 2,
+          background: "radial-gradient(ellipse at center, rgba(42,46,51,0.8) 0%, transparent 65%)",
         }}
       />
 
-      {/* Floating geometric ring — left */}
-      <motion.div
-        className="pointer-events-none absolute"
-        style={{
-          top: "20%", left: "5%",
-          width: 280, height: 280,
-          borderRadius: "50%",
-          border: "1px solid rgba(207,199,190,0.06)",
-        }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-      />
-
-      {/* Floating geometric ring — right */}
-      <motion.div
-        className="pointer-events-none absolute"
-        style={{
-          bottom: "15%", right: "8%",
-          width: 200, height: 200,
-          borderRadius: "50%",
-          border: "1px solid rgba(207,199,190,0.05)",
-        }}
-        animate={{ rotate: -360 }}
-        transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-      />
-
-      {/* Small accent dot — top right */}
-      <motion.div
-        className="pointer-events-none absolute hidden lg:block"
-        style={{
-          top: "30%", right: "15%",
-          width: 6, height: 6,
-          borderRadius: "50%",
-          background: "rgba(207,199,190,0.15)",
-        }}
-        animate={{ opacity: [0.15, 0.4, 0.15] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Small accent dot — bottom left */}
-      <motion.div
-        className="pointer-events-none absolute hidden lg:block"
-        style={{
-          bottom: "35%", left: "18%",
-          width: 4, height: 4,
-          borderRadius: "50%",
-          background: "rgba(207,199,190,0.12)",
-        }}
-        animate={{ opacity: [0.12, 0.35, 0.12] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-
-      {/* Subtle horizontal line accent */}
+      {/* Center content vignette for readability */}
       <div
-        className="pointer-events-none absolute hidden lg:block"
+        className="pointer-events-none absolute"
         style={{
-          top: "50%", left: 0, right: 0,
-          height: 1,
-          background: "linear-gradient(to right, transparent 5%, rgba(207,199,190,0.04) 30%, rgba(207,199,190,0.04) 70%, transparent 95%)",
+          inset: 0, zIndex: 2,
+          background: "radial-gradient(ellipse 50% 40% at 50% 45%, rgba(42,46,51,0.85) 0%, transparent 100%)",
         }}
       />
 
       {/* Main content */}
-      <div className="relative z-10 mx-auto w-full text-center" style={{ maxWidth: 780, padding: "0 24px" }}>
+      <div className="relative mx-auto w-full text-center" style={{ maxWidth: 780, padding: "0 24px", zIndex: 10 }}>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -153,6 +104,8 @@ export function Hero() {
           fontWeight: 500,
           textAlign: "center",
           padding: "0 24px",
+          position: "relative",
+          zIndex: 10,
         }}
       >
         {t.hero.trusted}

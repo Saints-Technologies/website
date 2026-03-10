@@ -103,10 +103,10 @@ export function ContactForm() {
   return (
     <section
       id="contact"
-      style={{ paddingTop: 200, paddingBottom: 200, paddingLeft: 24, paddingRight: 24, background: "#2A2E33" }}
+      style={{ paddingTop: 120, paddingBottom: 120, paddingLeft: 24, paddingRight: 24, background: "#2A2E33" }}
     >
       <div style={{ maxWidth: 1120, marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ height: 1, background: "rgba(207,199,190,0.12)", marginBottom: 120 }} />
+        <div style={{ height: 1, background: "rgba(207,199,190,0.12)", marginBottom: 80 }} />
 
         <div className="grid gap-16 lg:grid-cols-5 lg:gap-20">
           {/* Left */}
