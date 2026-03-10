@@ -84,6 +84,13 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   category: "technology",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: { url: "/logo.png", sizes: "1024x1024" },
+  },
 };
 
 export default function RootLayout({

@@ -24,7 +24,7 @@ const translations = {
     },
     stats: {
       items: [
-        { value: "50+", label: "Projects Delivered" },
+        { value: "12+", label: "Projects Delivered" },
         { value: "99.9%", label: "Uptime SLA" },
         { value: "3×", label: "Faster Delivery" },
         { value: "24h", label: "Response Time" },
@@ -238,7 +238,7 @@ const translations = {
     },
     stats: {
       items: [
-        { value: "50+", label: "Teslim Edilen Proje" },
+        { value: "12+", label: "Teslim Edilen Proje" },
         { value: "99.9%", label: "Çalışma Süresi SLA" },
         { value: "3×", label: "Daha Hızlı Teslimat" },
         { value: "24s", label: "Yanıt Süresi" },
