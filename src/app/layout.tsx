@@ -133,6 +133,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <meta name="google-site-verification" content="Qp_AAqJFW6n8QRFIWEFhkOzQxWEfOfNoIBk4A3pMN1s" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
