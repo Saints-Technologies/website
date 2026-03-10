@@ -433,9 +433,9 @@ const translations = {
       connect: "Bağlantı",
     },
   },
-} as const;
+};
 
-type Translations = typeof translations.en;
+type Translations = (typeof translations)["en"];
 
 interface I18nContextType {
   lang: Lang;
@@ -453,7 +453,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");
 
   return (
-    <I18nContext.Provider value={{ lang, setLang, t: translations[lang] }}>
+    <I18nContext.Provider value={{ lang, setLang, t: translations[lang] as Translations }}>
       {children}
     </I18nContext.Provider>
   );
