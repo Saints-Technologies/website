@@ -18,28 +18,37 @@ const siteUrl = "https://saintstechnologies.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Saints Technologies | Engineering Intelligent Solutions",
+    default:
+      "Saints Technologies | Custom AI, SaaS & Full-Stack Development Agency",
     template: "%s | Saints Technologies",
   },
   description:
-    "We build custom AI, scalable data systems, and industrial software for visionary companies. Enterprise-grade LLM implementations, B2B SaaS, ERP platforms, and full-stack development.",
+    "Saints Technologies builds custom AI solutions, RAG pipelines, B2B SaaS platforms, ERP systems, and full-stack applications. Enterprise-grade LLM implementations, scalable data engineering, and industrial software for visionary companies. Based in Turkey, serving worldwide.",
   keywords: [
-    "AI Development",
+    "AI Development Company",
     "Custom AI Solutions",
-    "RAG Pipelines",
+    "RAG Pipeline Development",
     "LLM Implementation",
+    "AI Chatbot Development",
     "B2B SaaS Development",
-    "ERP Software",
-    "Full-Stack Development",
-    "Data Engineering",
-    "Tech Agency",
+    "ERP Software Development",
+    "Full-Stack Development Agency",
+    "Data Engineering Services",
     "Software Development Company",
-    "Saints Technologies",
-    "Enterprise Software",
+    "Custom Software Development",
+    "React Next.js Development",
+    "Enterprise Software Solutions",
+    "Tech Agency Turkey",
     "Startup Technology Partner",
+    "Saints Technologies",
     "Yapay Zeka Geliştirme",
+    "Yapay Zeka Şirketi",
     "Yazılım Ajansı",
+    "Yazılım Geliştirme Şirketi",
     "SaaS Geliştirme",
+    "ERP Yazılım Geliştirme",
+    "Özel Yazılım Geliştirme",
+    "Veri Mühendisliği",
   ],
   authors: [{ name: "Saints Technologies" }],
   creator: "Saints Technologies",
@@ -61,23 +70,23 @@ export const metadata: Metadata = {
     alternateLocale: "tr_TR",
     url: siteUrl,
     siteName: "Saints Technologies",
-    title: "Saints Technologies | Engineering Intelligent Solutions",
+    title: "Saints Technologies | Custom AI, SaaS & Full-Stack Development",
     description:
-      "We build custom AI, scalable data systems, and industrial software for visionary companies.",
+      "We build custom AI solutions, scalable SaaS platforms, and industrial software for visionary companies. Enterprise-grade development, worldwide.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Saints Technologies — Engineering Intelligent Solutions",
+        alt: "Saints Technologies — Custom AI, SaaS & Full-Stack Development Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saints Technologies | Engineering Intelligent Solutions",
+    title: "Saints Technologies | Custom AI, SaaS & Full-Stack Development",
     description:
-      "We build custom AI, scalable data systems, and industrial software for visionary companies.",
+      "We build custom AI solutions, scalable SaaS platforms, and industrial software for visionary companies.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -98,15 +107,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
+  const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Saints Technologies",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/og-image.png`,
     description:
-      "We build custom AI, scalable data systems, and industrial software for visionary companies.",
+      "Saints Technologies builds custom AI solutions, RAG pipelines, B2B SaaS platforms, ERP systems, and full-stack applications for visionary companies worldwide.",
     foundingDate: "2026",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Izmir",
+      addressCountry: "TR",
+    },
     contactPoint: {
       "@type": "ContactPoint",
       email: "info@saintstechnologies.com",
@@ -120,21 +135,74 @@ export default function RootLayout({
     knowsAbout: [
       "Artificial Intelligence",
       "Machine Learning",
+      "Large Language Models",
       "RAG Systems",
-      "LLM Implementation",
+      "Natural Language Processing",
       "SaaS Development",
       "ERP Systems",
       "Full-Stack Development",
       "Data Engineering",
+      "Cloud Computing",
     ],
-    areaServed: "Worldwide",
-    serviceType: [
-      "Custom AI Development",
-      "B2B SaaS Development",
-      "ERP Platform Development",
-      "Full-Stack Web Development",
-      "Data Engineering",
-    ],
+    areaServed: {
+      "@type": "GeoShape",
+      name: "Worldwide",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Software Development Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Custom AI & RAG Development",
+            description:
+              "Enterprise-grade LLM implementations and retrieval-augmented generation pipelines.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "B2B SaaS & ERP Development",
+            description:
+              "Custom platforms that scale business operations from CRM to full ERP suites.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Full-Stack Web & Mobile Development",
+            description:
+              "End-to-end web and mobile solutions with pixel-perfect interfaces and robust architectures.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Data Engineering",
+            description:
+              "Scalable data pipelines, real-time analytics, and infrastructure that powers decisions.",
+          },
+        },
+      ],
+    },
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Saints Technologies",
+    url: siteUrl,
+    description:
+      "Custom AI, SaaS & Full-Stack Development Agency",
+    publisher: {
+      "@type": "Organization",
+      name: "Saints Technologies",
+    },
   };
 
   return (
@@ -143,7 +211,15 @@ export default function RootLayout({
         <meta name="google-site-verification" content="Qp_AAqJFW6n8QRFIWEFhkOzQxWEfOfNoIBk4A3pMN1s" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
+          }}
         />
       </head>
       <body
