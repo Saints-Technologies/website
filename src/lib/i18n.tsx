@@ -31,7 +31,7 @@ const translations = {
       ],
     },
     marquee: {
-      label: "Technologies We Work With",
+      label: "Technologies We Use",
     },
     services: {
       label: "Services",
@@ -245,7 +245,7 @@ const translations = {
       ],
     },
     marquee: {
-      label: "Çalıştığımız Teknolojiler",
+      label: "Kullandığımız Teknolojiler",
     },
     services: {
       label: "Hizmetler",
