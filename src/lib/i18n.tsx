@@ -8,6 +8,7 @@ const translations = {
   en: {
     nav: {
       services: "Services",
+      products: "Products",
       ventures: "Ventures",
       contact: "Contact",
       cta: "Get in Touch",
@@ -222,6 +223,7 @@ const translations = {
   tr: {
     nav: {
       services: "Hizmetler",
+      products: "Ürünler",
       ventures: "Girişimler",
       contact: "İletişim",
       cta: "İletişime Geç",
